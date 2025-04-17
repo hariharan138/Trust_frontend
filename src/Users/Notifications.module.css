@@ -1,0 +1,195 @@
+.mainContainer{
+    background-color: #eceef1;
+}
+
+.header{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+}
+
+.header div{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.header div h1{
+  margin: 0;
+  font-size: 32px;
+}
+
+.header div ul li{
+    list-style: none;
+    cursor: pointer;
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.notificaitonTitle{
+    text-align: center;
+    font-weight: 700;
+    margin: auto 20px;
+}
+
+.loadingFallback{
+    display: grid;
+    align-items: center;
+}
+
+.subContainersupport{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.subContainer{
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+}
+
+.notificationCard{
+    padding: 10px;
+    border-radius: 10px;
+     box-shadow: 5px 5px 5px #514e4e5a;
+     margin: 10px;
+     width: 70%;
+     background-color: #ffffff;
+}
+
+.orderid{
+    font-size: 18px;
+    font-weight: 600;
+    color: #5c5757;
+}
+
+.orderid span{
+    font-size: 1.2em;
+    margin-left: 5px;
+    color: #211f1f;
+}
+
+.userdetials{
+    margin: 5px 0;
+}
+
+.veg, .noofpeople, .trustdetails, .acceptedBy, .trustPhone{
+    font-weight: 600;
+    font-size: 20px;
+    color: #5c5757;
+}
+
+.veg span, .noofpeople span, .trustdetails span, .acceptedBy span,
+.trustPhone span{
+    font-size: 1.2em;
+    color: #211f1f;
+}
+
+
+
+
+@media (max-width: 1199px) and (min-width: 768px) {
+  .header div h1 {
+    font-size: 28px;
+  }
+
+  .header div ul li {
+    font-size: 18px;
+  }
+
+  .subContainer {
+    width: 60%;
+    gap: 10px;
+  }
+
+  .notificationCard {
+    width: 80%;
+    padding: 12px;
+  }
+
+  .orderid, .veg, .noofpeople, .acceptedBy .trustPhone {
+    font-size: 18px;
+  }
+
+  .orderid span, .veg span, .noofpeople span .trustPhone span {
+    font-size: 1.1em;
+  }
+}
+
+/* Mobile Devices (480px - 767px) */
+@media (max-width: 767px) and (min-width: 480px) {
+  .header {
+    padding: 10px;
+  }
+
+  .header div h1 {
+    font-size: 24px;
+  }
+
+  .header div ul li {
+    font-size: 16px;
+  }
+
+  .subContainer {
+    width: 50%;
+    gap: 8px;
+  }
+
+  .notificationCard {
+    width: 100%;
+    padding: 8px;
+  }
+
+  .orderid, .veg, .noofpeople, .acceptedBy, .trustPhone {
+    font-size: 16px;
+  }
+
+  .orderid span, .veg span, .noofpeople span ,.trustPhone span {
+    font-size: 1em;
+  }
+}
+
+/* Small Mobile Devices (Below 480px) */
+@media (max-width: 492px) {
+  .header div {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .header div h1 {
+    font-size: 20px;
+  }
+
+  .header div ul li {
+    font-size: 14px;
+    padding: 5px 0;
+  }
+
+  .subContainer {
+    width: 70%;
+    gap: 6px;
+  }
+
+  .notificationCard {
+    width: 95%;
+    padding: 5px;
+  }
+
+  .orderid, .veg, .noofpeople, .acceptedBy, .trustPhone {
+    font-size: 14px;
+  }
+
+  .orderid span, .veg span, .noofpeople span, .trustPhone span {
+    font-size: 0.9em;
+  }
+}
