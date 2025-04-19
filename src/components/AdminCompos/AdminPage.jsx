@@ -48,7 +48,7 @@ function AdminPage() {
       });
 
       const response = await axios.post(
-        `${API_BASE_URL}/api/admin/adminlogin`,
+        `${API_BASE_URL}/admin/adminlogin`,
         formAdmin,
         {
           withCredentials: true,
