@@ -110,32 +110,22 @@ const Users = () => {
     }
   };
 
-  const createFoodOrder = async () => {
-    try {
-      const { data } = await axios.post(
-        `${API_BASE_URL}/user/foodRegister`, // <-- Use backticks for template string
-        createFoodDetail,
-        { withCredentials: true }
-      );
-      if (data?.data) {
-        setSuccessfullyCreated(data?.msg === "food created");
-        toast.success('The food order has been placed.', {
-          position: "bottom-left",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "dark",
-        });
-        setTimeout(() => {
-          setSuccessfullyCreated(false);
-        }, 2000);
+const createFoodOrder = async () => {
+  try {
+    const { data } = await axios.post(
+      `${API_BASE_URL}/user/foodRegister`, 
+      createFoodDetail,
+      {
+        headers: {
+          Authorization: `Bearer ${getCookie('userlogintoken')}`  // Add token for authorization
+        },
+        withCredentials: true
       }
-    } catch (err) {
-      console.error(err.response?.data?.msg || err);
-      toast.error('Failed to place food order. Please try again.', {
+    );
+
+    if (data?.data) {
+      setSuccessfullyCreated(data?.msg === "food created");
+      toast.success('The food order has been placed.', {
         position: "bottom-left",
         autoClose: 5000,
         hideProgressBar: false,
@@ -143,12 +133,28 @@ const Users = () => {
         pauseOnHover: true,
         draggable: true,
         progress: undefined,
-        theme: "light",
+        theme: "dark",
       });
-    } finally {
-      setCreateFoodDetail({ ...createFoodDetail, preferred: [], noOfPeople: 0 });
+      setTimeout(() => {
+        setSuccessfullyCreated(false);
+      }, 2000);
     }
-  };
+  } catch (err) {
+    console.error(err.response?.data?.msg || err);
+    toast.error('Failed to place food order. Please try again.', {
+      position: "bottom-left",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
+  } finally {
+    setCreateFoodDetail({ ...createFoodDetail, preferred: [], noOfPeople: 0 });
+  }
+};
 
   const getTrust = async () => {
     try {
