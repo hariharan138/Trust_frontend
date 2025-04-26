@@ -113,7 +113,7 @@ const Users = () => {
 const createFoodOrder = async () => {
     try {
       const { data } = await axios.post(
-        ${API_BASE_URL}/user/foodRegister, // <-- Use backticks for template string
+        `${API_BASE_URL}/user/foodRegister`, // <-- Use backticks for template string
         createFoodDetail,
         { withCredentials: true }
       );
